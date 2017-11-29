@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import index from '@/components/Index'
 import music from '@/components/Music'
+import form from '@/components/Form'
 
 Vue.use(Router)
 
@@ -16,6 +17,11 @@ export default new Router({
 			path: '/music',
 			name: 'Music',
 			component: music
+		},
+		{
+			path: '/form',
+			name: 'Form',
+			component: form
 		}
 
 	]

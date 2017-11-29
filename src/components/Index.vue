@@ -1,6 +1,6 @@
 <template>
 	<div id="index">
-		<router-link v-for="(r,idx) in routerList" :to="r" class="links"> {{ idx + 1 }}. {{ r }} </router-link>
+		<router-link v-for="(r,idx) in routerList" :to="r" key="r" class="links"> {{ idx + 1 }}. {{ r }} </router-link>
 	</div>
 </template>
 
@@ -10,7 +10,8 @@ export default {
 	data () {
 		return {
 			routerList: [
-				'music'
+				'music',
+				'form'
 			]
 		}
 	}
