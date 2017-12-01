@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import index from '@/components/Index'
 import music from '@/components/Music'
 import form from '@/components/Form'
+import detail from '@/components/Detail'
 
 Vue.use(Router)
 
@@ -22,6 +23,11 @@ export default new Router({
 			path: '/form',
 			name: 'Form',
 			component: form
+		},
+		{
+			path: '/detail/:hash',
+			name: 'Detail',
+			component: detail
 		}
 
 	]

@@ -6,7 +6,7 @@
 				<span 
 				v-for="m in musicList" 
 				class="result-item" 
-				@click="toDetail(m.hash)"
+				@click="toDetail(m.hash)" 
 				>
 					{{ m.filename }}
 				</span>
@@ -16,8 +16,6 @@
 
 
 <script>
-	
-	import http from '../utils/http'
 
 
 	export default {
@@ -44,7 +42,7 @@
 						pagesize: 20,
 						
 					}
-					http.jsonp(url,parameters).then(res => {
+					this.http.jsonp(url,parameters).then(res => {
 						console.log(res.data);
 						this.musicList = res.data.info;
 					},rej => {
@@ -60,20 +58,12 @@
 				this.timer = setTimeout(this.search.bind(this),1000);
 			},
 			toDetail: function(hash){
-				var url = 'http://m.kugou.com/app/i/getSongInfo.php';
-				var parameters = {
-					cmd: 'playInfo', 
-					hash: hash, 
-					format: 'jsonp'
-				}
-				http.jsonp(url,parameters).then(res => {
-					console.log(res);
-				},rej => {
-					console.log(rej);
-				}).catch(err => {
-					console.log(err);
+				this.$router.push({
+					name: 'Detail',
+					params: {
+						hash: hash
+					}
 				})
-				console.log(hash);
 			}
 		}
 	}
