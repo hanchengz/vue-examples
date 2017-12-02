@@ -18,9 +18,11 @@ http.jsonp = function(url,data){
 
 	var funcName = callBack + ++couter;
 
+
 	data.callback = funcName;
 
 	var fullUrl = url + '?' + queryString(data);
+	console.log(fullUrl);
 
 	return new Promise((res,rej) => {
 		window[funcName] = res;

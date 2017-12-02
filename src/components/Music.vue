@@ -96,11 +96,10 @@
 		width: 94%;
 		height: 20px;
 		padding: 8px 3%;
-		/*padding-bottom: 5px;*/
 		margin-bottom: 5px;
 		border-bottom: 1px solid #EEE;
 		overflow: hidden;
-		text-overflow:ellipsis;
+		text-overflow: ellipsis;
 		white-space: nowrap;
 	}
 	.result span:last-child{
