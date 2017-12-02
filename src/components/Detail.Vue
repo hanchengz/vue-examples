@@ -10,7 +10,7 @@
 				ref="img"
 				></div>
 			</div>
-			<audio :src="musicSrc" ref="audio" loop></audio>
+			<audio src="static/music.mp3" ref="audio" autoplay loop></audio>
 			<div class="info">
 				<div class="song-name">{{ musicInfo.fileName }}</div>
 				<div class="singer-name">{{ musicInfo.singerName }}</div>
@@ -66,15 +66,24 @@
 			var width = img.offsetWidth;
 			img.style.height = width + 'px';
 
+			// 设置背景颜色
+			document.getElementsByTagName("html")[0].style.backgroundColor = "rgb(200,200,200)";
 
 
 			this.musicStart();
 
 
-			// var audio = this.$refs.audio;
+			var audio = this.$refs.audio;
+			// audio.play();
 			document.addEventListener('WeixinJSBridgeReady',function(){
-				console.log(1111111);
+				audio.play();
 			})
+
+
+
+
+
+
 		},
 		computed: {
 			imgSrc: function(){
@@ -129,10 +138,10 @@
 					} else {
 						this.seconds = sec;
 					}
-
-
 				},1000)
 			}
+
+
 
 		}
 
@@ -174,18 +183,24 @@
 	.song-name{
 		font-size: 20px;
 		margin-bottom: 20px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
 	}
 	.singer-name{
 		font-size: 16px;
 		margin-bottom: 40px;
-		color: #AAA;
+		color: #666;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
 	}
 	.time{
 		position: relative;
 		height: 8px;
 		margin: 0 20px;
 		border-radius: 10px;
-		background-color: #EEE;
+		background-color: #DDD;
 	}
 	.now-time{
 		position: absolute;
