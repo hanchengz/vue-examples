@@ -11,7 +11,9 @@ export default {
 		return {
 			routerList: [
 				'music',
-				'form'
+				'form',
+				'map',
+				'todos'
 			]
 		}
 	}

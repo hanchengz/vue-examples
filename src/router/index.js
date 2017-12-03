@@ -5,6 +5,7 @@ import music from '@/components/Music'
 import form from '@/components/Form'
 import detail from '@/components/Detail'
 import map from '@/components/Map'
+import todos from '@/components/Todos'
 
 Vue.use(Router)
 
@@ -34,6 +35,11 @@ export default new Router({
 			path: '/map',
 			name: 'Map',
 			component: map
+		},
+		{
+			path: '/todos',
+			name: 'Todos',
+			component: todos
 		}
 
 	]

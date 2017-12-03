@@ -80,7 +80,6 @@
 	.search{
 		width: 94%;
 		height: 30px;
-		/*background-color: #FCC;*/
 		background-color: rgba(255,255,121,.5);
 		border: 0;
 		outline: none;
@@ -88,7 +87,6 @@
 		font-size: 16px;
 	}
 	.result{
-		/*background-color: #FFC;*/
 		background-color: rgba(255,255,121,.2);
 	}
 	.result-item{ 
